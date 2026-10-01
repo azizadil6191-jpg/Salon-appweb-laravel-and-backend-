@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class DayOffRequest extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'staff_id',
+        'requested_day',
+        'note',
+        'status'
+    ];
+
+    public function staff()
+    {
+        return $this->belongsTo(Staff::class);
+    }
+}
